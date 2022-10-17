@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Date;
 
 @Repository
 public class ReservationRepository {
@@ -28,4 +29,20 @@ public class ReservationRepository {
     public void delete(Reservation r){
         reservationCrudRepository.delete(r);
     }
+
+    public Optional<Reservation> getById(int id){
+        return reservationCrudRepository.findById(id);
+    }
+
+    public List<Reservation> getDatesReport(Date inicio,Date fin){
+        return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(inicio,fin);
+    }
+    public List<Reservation> getStatusReport(String sts){
+        return reservationCrudRepository.findAllByStatus(sts);
+    }
+
+    public List<Object[]> getTopClients(){
+        return reservationCrudRepository.getTopClients();
+    }
+
 }

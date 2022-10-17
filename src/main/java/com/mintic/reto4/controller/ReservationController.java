@@ -5,6 +5,8 @@ import com.mintic.reto4.services.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import com.mintic.reto4.model.dto.StatusAccount;
+import com.mintic.reto4.model.dto.TopClients;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,4 +46,18 @@ public class ReservationController {
     public boolean delete(@PathVariable("id") int id){
         return reservationService.delete(id);
     }
+
+    @GetMapping("/report-dates/{dateA}/{dateB}")
+    public List<Reservation> getByDates(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
+        return reservationService.getReservationsByPeriod(da,db);
+    }
+    @GetMapping("/report-status")
+    public StatusAccount getByStatus(){
+        return reservationService.getReportByStatus();
+    }
+    @GetMapping("/report-clients")
+    public List<TopClients> getTopClients(){
+        return reservationService.getTopclients();
+    }
+
 }
