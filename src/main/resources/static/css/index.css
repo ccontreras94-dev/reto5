@@ -17,15 +17,51 @@ body{
     height: 100px;
     text-align: center;
 }
-/* main = pantalla - header  == 100vh - 100 pixeles del header  -- VH significa viewport height (altura del dispositivo)  */
-.main{
-    /* background: yellowgreen; */
-    width: 100%;
-    height: calc(100vh - 200px); /*tome el 100 de la altura del dispositico y se resta 100 px (header) y 100 footer*/
-    display: flex; /*  las cajas se colocan una frente de la otra Si no se coloca se apilaria uan arriba y la otra abajo*/
-    justify-content: center; /* Alineacion horizontal*/
-    align-items: center;  /* alineacion vertical*/
+.image{
+    background-size: cover;
+
 }
+.title-home{
+    font-family: "Cooper Black";
+    color: gainsboro;
+}
+title{
+    font-family: "Cooper Black";
+    color: purple;
+}
+
+li{
+    font-family: "Arial Narrow";
+    color: purple;
+}
+/*formularios/*
+ */
+.titulo-forms{
+    font-family: Bahnschrift;
+    align-content: center;
+}
+.formularios{
+    align-items: center;
+}
+input{
+    width : 150px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: 1px;
+    border-radius: initial;
+}
+button{
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+button:hover{
+    background-color: darkorchid; /* Green */
+    color: white;
+}
+/* main = pantalla - header  == 100vh - 100 pixeles del header  -- VH significa viewport height (altura del dispositivo)  */
+
 .section{
     color: #C6CFDE;
     background: #4A154B;
